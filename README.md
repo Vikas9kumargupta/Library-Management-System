@@ -4,7 +4,7 @@
 
 **Java 21**
 **Spring Data Jpa**
-**Postgres SSQL**
+**Postgres SQL**
 **Spring Security**
 **JWT**
 
