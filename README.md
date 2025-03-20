@@ -1,4 +1,4 @@
-# Building Library Management System Using Spring Boot
+# Library Management System Using Spring Boot
 
 ## Tech Stack : 
 
