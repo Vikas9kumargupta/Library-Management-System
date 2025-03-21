@@ -1,10 +1,20 @@
 # Library Management System Using Spring Boot
 
-## Tech Stack : 
+## 🛠 Technologies Used : 
+🚀 **Spring Boot**  
+🔐 **Spring Security**  
+🔑 **JWT (JSON Web Token)**  
+🗃️ **Spring Data JPA**  
+🐬 **MySQL** *(or H2 for an in-memory database)*  
+⚡ **Lombok**  
+📦 **Maven**
 
-**Java 21**
-**Spring Data Jpa**
-**Postgres SQL**
-**Spring Security**
-**JWT**
+---
+
+## ⚙️ Installation and Setup
+### 📌 Prerequisites
+Ensure you have the following installed before setting up the project:
+- **Java 17+** ☕
+- **Maven** 🏗️
+- **MySQL** *(optional, if not using H2)* 🗄️
 
