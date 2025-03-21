@@ -7,47 +7,57 @@ The Library Task Manager System is a web application designed to help libraries 
 ---
 
 ## ✨ Features
-✅ **User Authentication & JWT-based Authorization** 🔐
-✅ **Book Management (Add, update, delete, view books)** 📚
-✅ **Task Management (Assign and track library tasks)** 📋
-✅ **Borrowing System (Issue & return books with due date tracking)** 🔄
-✅ **Spring Security Implementation** 🛡️
-✅ **Database Persistence with Spring Data JPA** 🗄️
+- ✅ **User Authentication & JWT-based Authorization** 🔐
+- ✅ **Book Management (Add, update, delete, view books)** 📚
+- ✅ **Task Management (Assign and track library tasks)** 📋
+- ✅ **Borrowing System (Issue & return books with due date tracking)** 🔄
+- ✅ **Spring Security Implementation** 🛡️
+- ✅ **Database Persistence with Spring Data JPA** 🗄️
 
 ---
 
 ## 🛠 Technologies Used
 
-🚀 **Spring Boot**
-🔐 **Spring Security**
-📄 **Spring Data JPA (Hibernate ORM)**
-💾 **PostgreSQL / MySQL**
-🔑 **JWT (JSON Web Token) Authentication**
-🛠️ **Maven / Gradle📝 Swagger / OpenAPI for API Documentation**
-✅ **JUnit & Mockito for Testing**
+-🚀 **Spring Boot**
+-🔐 **Spring Security**
+-📄 **Spring Data JPA (Hibernate ORM)**
+-💾 **PostgreSQL / MySQL**
+-🔑 **JWT (JSON Web Token) Authentication**
+-🛠️ **Maven / Gradle📝 Swagger / OpenAPI for API Documentation**
+-✅ **JUnit & Mockito for Testing**
 
 ---
 
-⚙️ Installation
+## ⚙️ Installation and Setup
 
-Clone the repository:
+### 📌 Prerequisites
+Ensure you have the following installed before setting up the project:
+- **Java 17+** ☕
+- **Maven** 🏗️
+- **MySQL** *(optional, if not using H2)* 🗄️
 
-git clone https://github.com/your-username/library-task-manager.git
-cd library-task-manager
+### 📥 Steps to Run the Application
+1. **Clone the repository:**
+    ```sh
+   git clone https://github.com/your-username/library-task-manager.git
+   cd library-task-manager
+   ```
+2. **Configure the database in `application.properties`** (for MySQL):
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
+   spring.datasource.username=root
+   spring.datasource.password=yourpassword
+   spring.jpa.hibernate.ddl-auto=update
+   ```
+3. **Build and run the application:**
+   ```sh
+   mvn clean install
+   mvn spring-boot:run
+   ```
 
-Configure the database in application.properties:
+---
 
-spring.datasource.url=jdbc:mysql://localhost:3306/library_db
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-
-Build and run the application:
-
-mvn clean install
-mvn spring-boot:run
-
-📡 API Endpoints
+## 📡 API Endpoints
 
 Method
 
@@ -103,33 +113,40 @@ GET
 
 Get all assigned tasks
 
-🤝 Contribution Guidelines
+---
 
-Fork the repository.
+## 🤝 Contribution Guidelines
 
-Create a feature branch:
+- 🔹 Fork the repository.
 
-git checkout -b feature-name
+- 🔹 Create a feature branch:
 
-Commit changes:
+- 🔹 git checkout -b feature-name
 
-git commit -m "Add new feature"
+### Commit changes:
 
-Push to the branch:
+- 🔹 git commit -m "Add new feature"
 
-git push origin feature-name
+- 🔹Push to the branch:
 
-Create a pull request.
+- 🔹 git push origin feature-name
 
-📜 License
+- 🔹 Create a pull request.
+
+---
+
+## 📜 License
 
 This project is licensed under the MIT License. See LICENSE for details.
 
-📞 Contact
+---
 
-For any queries or contributions, please reach out:📧 Email: your-vikasgup074@gmail.com
-🔗 LinkedIn: https://www.linkedin.com/in/work-with-vikas/
-💻 GitHub: https://github.com/Vikas9kumargupta
+## 📞 Contact
+
+For any queries or contributions, please reach out:
+- 📧 Email: vikasgup074@gmail.com
+- 🔗 LinkedIn: https://www.linkedin.com/in/work-with-vikas/
+- 💻 GitHub: https://github.com/Vikas9kumargupta
 
 Happy Coding! 🚀
 
