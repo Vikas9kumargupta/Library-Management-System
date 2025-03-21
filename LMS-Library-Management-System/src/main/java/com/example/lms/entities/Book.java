@@ -1,7 +1,7 @@
 package com.example.lms.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,31 +21,21 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Column(name = "isbn", length = 50, unique = true)
+    @Column(name = "isbn", length = 50, nullable = false, unique = true)
     private String isbn;//Represents book Number
 
-    @NotBlank
-    @Column(name = "name", length = 50, unique = true)
+    @Column(name = "name", length = 50)
     private String name;
 
     @Column(name = "description", length = 250, nullable = false)
     private String description;
 
-    @NotBlank
-    @Column(name = "price")
-    private Integer price;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "publisher_id", nullable = false)
-    private Publisher publisher;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "book_authors",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "author_id")
-    )
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "author_id")})
     private Set<Author> authors = new HashSet<Author>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -58,7 +48,14 @@ public class Book {
     @JoinTable(name = "books_publishers",
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "publisher_id")})
-    private Set<Publisher> publishers = new HashSet<Publisher>();
+    private Set<Publisher> publishers = new HashSet<>();
+
+    public Book(String isbn, String name, String description) {
+        this.isbn = isbn;
+        this.name = name;
+        this.description = description;
+    }
+
 
     public void removePublisher(Publisher publisher){
         this.publishers.remove(publisher);

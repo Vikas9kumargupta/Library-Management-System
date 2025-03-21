@@ -24,11 +24,13 @@ public class Publisher {
     private Long id;
 
     @NotBlank
-    @Column(name = "name", length = 50, unique = true)
+    @Column(name = "name", length = 50,nullable = false, unique = true)
     private String name;
 
     @ManyToMany(mappedBy = "publishers", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
+
+    public Publisher(String name) {this.name = name;}
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}

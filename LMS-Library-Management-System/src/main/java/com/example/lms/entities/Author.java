@@ -20,18 +20,23 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false, nullable = false)
+    @Column(updatable = false)
     private Long id;
 
     @Column(name = "name", length = 100, nullable = false, unique = true)
     private String name;
 
-    @NotBlank
+
     @Column(name = "description", length = 250)
     private String description;
 
     @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
+
+    public Author(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}

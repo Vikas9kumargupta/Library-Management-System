@@ -6,7 +6,6 @@ import com.example.lms.repositories.BookRepository;
 import com.example.lms.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -31,6 +30,10 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void createBook(Book book) {
+        if (bookRepository.existsByName(book.getName())) {
+            System.out.println("Book with this name already exists: " + book.getName());
+            return; // Skip duplicate book creation
+        }
         bookRepository.save(book);
     }
 
