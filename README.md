@@ -18,13 +18,13 @@ The Library Task Manager System is a web application designed to help libraries 
 
 ## 🛠 Technologies Used
 
--🚀 **Spring Boot**
--🔐 **Spring Security**
--📄 **Spring Data JPA (Hibernate ORM)**
--💾 **PostgreSQL / MySQL**
--🔑 **JWT (JSON Web Token) Authentication**
--🛠️ **Maven / Gradle📝 Swagger / OpenAPI for API Documentation**
--✅ **JUnit & Mockito for Testing**
+- 🚀 **Spring Boot**
+- 🔐 **Spring Security**
+- 📄 **Spring Data JPA (Hibernate ORM)**
+- 💾 **PostgreSQL / MySQL**
+- 🔑 **JWT (JSON Web Token) Authentication**
+- 🛠️ **Maven / Gradle📝 Swagger / OpenAPI for API Documentation**
+- ✅ **JUnit & Mockito for Testing**
 
 ---
 
@@ -44,7 +44,7 @@ Ensure you have the following installed before setting up the project:
    ```
 2. **Configure the database in `application.properties`** (for MySQL):
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
+   spring.datasource.url=jdbc:mysql://localhost:3306/library_system
    spring.datasource.username=root
    spring.datasource.password=yourpassword
    spring.jpa.hibernate.ddl-auto=update
@@ -59,59 +59,39 @@ Ensure you have the following installed before setting up the project:
 
 ## 📡 API Endpoints
 
-Method
+## Authentication
 
-Endpoint
+### Register a new user
+**POST** `/api/auth/register`
 
-Description
+### Login and obtain JWT
+**POST** `/api/auth/login`
 
-POST
+---
 
-/api/auth/register
+## Books Management
 
-Register a new user
+### Get all books
+**GET** `/api/books`
 
-POST
+### Add a new book
+**POST** `/api/books`
 
-/api/auth/login
+### Update book details
+**PUT** `/api/books/{id}`
 
-Login and obtain JWT
+### Delete a book
+**DELETE** `/api/books/{id}`
 
-GET
+---
 
-/api/books
+## Library Tasks
 
-Get all books
+### Assign a new library task
+**POST** `/api/tasks`
 
-POST
-
-/api/books
-
-Add a new book
-
-PUT
-
-/api/books/{id}
-
-Update book details
-
-DELETE
-
-/api/books/{id}
-
-Delete a book
-
-POST
-
-/api/tasks
-
-Assign a new library task
-
-GET
-
-/api/tasks
-
-Get all assigned tasks
+### Get all assigned tasks
+**GET** `/api/tasks`
 
 ---
 
